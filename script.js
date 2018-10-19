@@ -57,14 +57,14 @@
 // }
 // top SOLUTION ON KATA
 ///////////////////////////////////
-// let cubeOdd = a => {
-//   var isNumeric = a.every(x => !isNaN(x))
-//   return isNumeric ? a.filter(n => n % 2).reduce((s, n) => s + (n * n * n), 0) : undefined
-// }
+let cubeOdd = a => {
+  var isNumeric = a.every(x => !isNaN(x))
+  return isNumeric ? a.filter(n => n % 2).reduce((s, n) => s + (n * n * n), 0) : undefined
+}
 
-// console.log(cubeOdd(['a', -27, -2, 2, 27]));
-// console.log(cubeOdd([-27, -2, 2, 27]));
-// console.log(cubeOdd([0, 1, 2, 3]));
+console.log(cubeOdd(['a', -27, -2, 2, 27]));
+console.log(cubeOdd([-27, -2, 2, 27]));
+console.log(cubeOdd([0, 1, 2, 3]));
 
 // //MY SOLUTION 10/9/2018
 // function arithmetic (a, b, operator) {
@@ -104,27 +104,27 @@
 // Courtesy of ProjectEuler.net
 
 
-function solution(number) {
-    var m3 = []; var m5 = []; var sum = 0;
-    for (let index = 0; index < number; index++) {
-        if (3 * (index + 1) < number) {
-            m3[index] = 3 * (index + 1);
-        }
-        if (5 * (index + 1) < number) {
-            m5[index] = 5 * (index + 1);
-        }
-    }
-    for (let index = 0; index < m3.length; index++)
-        {
-            if (!isNaN(m5[index]) && (!isNaN(m3[index]))) {
-                if (m3.includes(m5[index])) { sum += m3[index];
-                }else { sum += m3[index] + m5[index]; }
-            }else { sum += m3[index]; }
-        }
-    return sum;
-}
+// function solution(number) {
+//     var m3 = []; var m5 = []; var sum = 0;
+//     for (let index = 0; index < number; index++) {
+//         if (3 * (index + 1) < number) {
+//             m3[index] = 3 * (index + 1);
+//         }
+//         if (5 * (index + 1) < number) {
+//             m5[index] = 5 * (index + 1);
+//         }
+//     }
+//     for (let index = 0; index < m3.length; index++)
+//         {
+//             if (!isNaN(m5[index]) && (!isNaN(m3[index]))) {
+//                 if (m3.includes(m5[index])) { sum += m3[index];
+//                 }else { sum += m3[index] + m5[index]; }
+//             }else { sum += m3[index]; }
+//         }
+//     return sum;
+// }
+// console.log(solution(6));
 
-console.log(solution(6));
 // function test(n, expected) {
 //   let actual = solution(n)
 //   Test.assertEquals(actual, expected, `Expected ${expected}, got ${actual}`)
@@ -133,3 +133,20 @@ console.log(solution(6));
 // Test.describe("basic tests", function () {
 //   test(10, 23)
 // })
+
+// kata solution below:
+// function solution(number) {
+//     var sum = 0;
+
+//     for (var i = 1; i < number; i++) {
+//         if (i % 3 == 0 || i % 5 == 0) {
+//             sum += i
+//         }
+//     }
+//     return sum;
+// }
+
+
+// function sortArray(array){
+
+//}
