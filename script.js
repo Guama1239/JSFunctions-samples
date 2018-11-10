@@ -57,14 +57,14 @@
 // }
 // top SOLUTION ON KATA
 ///////////////////////////////////
-let cubeOdd = a => {
-  var isNumeric = a.every(x => !isNaN(x))
-  return isNumeric ? a.filter(n => n % 2).reduce((s, n) => s + (n * n * n), 0) : undefined
-}
+// let cubeOdd = a => {
+//   var isNumeric = a.every(x => !isNaN(x))
+//   return isNumeric ? a.filter(n => n % 2).reduce((s, n) => s + (n * n * n), 0) : undefined
+// }
 
-console.log(cubeOdd(['a', -27, -2, 2, 27]));
-console.log(cubeOdd([-27, -2, 2, 27]));
-console.log(cubeOdd([0, 1, 2, 3]));
+// console.log(cubeOdd(['a', -27, -2, 2, 27]));
+// console.log(cubeOdd([-27, -2, 2, 27]));
+// console.log(cubeOdd([0, 1, 2, 3]));
 
 // //MY SOLUTION 10/9/2018
 // function arithmetic (a, b, operator) {
@@ -146,7 +146,38 @@ console.log(cubeOdd([0, 1, 2, 3]));
 //     return sum;
 // }
 
+//=======================================
+//11/10/2018
+// You have an array of numbers.
+// Your task is to sort ascending odd numbers but even numbers must be on their places.
 
-// function sortArray(array){
+// Zero isn 't an odd number and you don'
+// t need to move it.If you have an empty array, you need to
+// return it.
 
-//}
+// Example
+
+//sortArray([5, 3, 2, 8, 1, 4]) == [1, 3, 2, 8, 5, 4]
+// console.log(sortArray([]));
+// console.log(sortArray([5, 3, 2, 8, 1, 4])); //, [1, 3, 2, 8, 5, 4])
+// console.log(sortArray([5, 3, 1, 8, 0])); //, [1, 3, 5, 8, 0])
+
+
+function sortArray(array){
+   if (array !== []){
+       let odd = array.filter(function(v){return v % 2 ==1;});
+       odd.sort(function(a,b){return a-b});
+       for (let index = 0; index < array.length; index++) {
+           if (array[index] % 2 == 0){
+            odd.splice(index, 0, array[index]);
+           };
+           
+       }
+       return odd;
+   }
+   return ('[]');
+};
+
+console.log(sortArray([]));
+console.log(sortArray([5, 3, 2, 8, 1, 4]));//, [1, 3, 2, 8, 5, 4])
+console.log(sortArray([5, 3, 1, 8, 0]));//, [1, 3, 5, 8, 0])
