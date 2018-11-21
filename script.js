@@ -163,21 +163,37 @@
 // console.log(sortArray([5, 3, 1, 8, 0])); //, [1, 3, 5, 8, 0])
 
 
-function sortArray(array){
-   if (array !== []){
-       let odd = array.filter(function(v){return v % 2 ==1;});
-       odd.sort(function(a,b){return a-b});
-       for (let index = 0; index < array.length; index++) {
-           if (array[index] % 2 == 0){
-            odd.splice(index, 0, array[index]);
-           };
+// function sortArray(array){
+//    if (array !== []){
+//        let odd = array.filter(function(v){return v % 2 ==1;});
+//        odd.sort(function(a,b){return a-b});
+//        for (let index = 0; index < array.length; index++) {
+//            if (array[index] % 2 == 0){
+//             odd.splice(index, 0, array[index]);
+//            };
            
-       }
-       return odd;
-   }
-   return ('[]');
-};
+//        }
+//        return odd;
+//    }
+//    return ('[]');
+// };
 
-console.log(sortArray([]));
-console.log(sortArray([5, 3, 2, 8, 1, 4]));//, [1, 3, 2, 8, 5, 4])
-console.log(sortArray([5, 3, 1, 8, 0]));//, [1, 3, 5, 8, 0])
+// console.log(sortArray([]));
+// console.log(sortArray([5, 3, 2, 8, 1, 4]));//, [1, 3, 2, 8, 5, 4])
+// console.log(sortArray([5, 3, 1, 8, 0]));//, [1, 3, 5, 8, 0])
+
+//november 20 2018
+
+// var humanYearsCatYearsDogYears = function (humanYears) {
+//     let CatYears=15; let DogYears=15;
+//     for (let index = 1; index <= humanYears; index++) {
+//         if (index === 2 ) { CatYears+=9; DogYears+=9;}
+//         else if (index>2){CatYears+=4;DogYears+=5;}
+//     }
+//     return [humanYears, CatYears, DogYears];
+// }
+
+// console.log(humanYearsCatYearsDogYears(1));
+// console.log(humanYearsCatYearsDogYears(2));
+// console.log(humanYearsCatYearsDogYears(10));
+
